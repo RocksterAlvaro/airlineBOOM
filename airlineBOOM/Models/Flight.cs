@@ -20,9 +20,9 @@ namespace airlineBOOM.Models
         public Setoff FlightSetoff { get; set; }
         public Pilot Pilot { get; set; }
         public Pilot CoPilot { get; set; }
-        public Pilot Auxiliary1 { get; set; }
-        public Pilot Auxiliary2 { get; set; }
-        public Pilot Auxiliary3 { get; set; }
+        public Hostess Auxiliary1 { get; set; }
+        public Hostess Auxiliary2 { get; set; }
+        public Hostess Auxiliary3 { get; set; }
 
         // Origin & destiny cities
         public City Origin { get; set; }

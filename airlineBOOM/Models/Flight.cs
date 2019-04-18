@@ -1,5 +1,6 @@
 ﻿using airlineBOOM.Models.FlightSettingVariables;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace airlineBOOM.Models
 {

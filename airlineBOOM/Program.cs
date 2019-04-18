@@ -25,11 +25,6 @@ namespace airlineBOOM
                 var serviceProvider = services.GetRequiredService<IServiceProvider>();
                 var configuration = services.GetRequiredService<IConfiguration>();
                 Seeds.CreateRoles(serviceProvider, configuration).Wait();
-
-                AppDbContext context = services.GetRequiredService<AppDbContext>();
-
-                // Only take this into account when working with existing databases
-                // context.Database.Migrate();
             }
 
             host.Run();

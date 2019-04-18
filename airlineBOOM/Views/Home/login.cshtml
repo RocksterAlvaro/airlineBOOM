@@ -1,0 +1,44 @@
+﻿<!-- Dependency injection -->
+@model airlineBOOM.Models.AppUser
+@using Microsoft.AspNetCore.Identity;
+@using airlineBOOM.Models;
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<!-- Page itself -->
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <!-- If the user is signed in -->
+    <p>Welcome</p>
+    <p>@User.Identity.Name</p>
+
+    <p>@ViewBag.AppUser.UserName</p>
+}
+else
+{
+    <!-- If the user is NOT signed in -->
+    
+    <form asp-controller="home" asp-action="login" method="POST">
+        <h1>Login:</h1>
+
+        <div class="row form-group">
+            <label class="col-1 col-form-label">Name:</label>
+            <div class="col-lg-6">
+                <input class="form-control" asp-for="UserName" />
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <label class="col-1 col-form-label">Password:</label>
+            <div class="col-lg-6">
+                <input class="form-control" type="password" asp-for="Password" />
+            </div>
+        </div>
+        
+        <input class="btn btn-outline-dark" type="submit" asp-page-handler="login" value="Login" />
+    </form>
+}

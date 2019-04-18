@@ -1,0 +1,60 @@
+﻿@model airlineBOOM.Models.AppUser
+
+@{
+    ViewData["Title"] = "createUser";
+}
+
+<form method="POST">
+    <h1>Create user:</h1>
+
+    <div class="row form-group">
+        <label class="col-1 col-form-label">Name:</label>
+        <div class="col-lg-6">
+            <input class="form-control" asp-for="UserName" />
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <label class="col-1 col-form-label">Email:</label>
+        <div class="col-lg-6">
+            <input class="form-control" asp-for="Email" />
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <label class="col-1 col-form-label">Password:</label>
+        <div class="col-lg-6">
+            <input type="password" class="form-control" asp-for="Password" />
+        </div>
+    </div>
+
+    <fieldset class="form-group">
+        <div class="row">
+            <label class="col-1 col-form-label">Cargo:</label>
+            <div class="col-lg-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="userRole" value="Pilot">
+                    <label class="form-check-label" for="userRole1">
+                        Pilot
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="userRole" value="Office">
+                    <label class="form-check-label" for="userRole2">
+                        Office
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="userRole" value="FlightOperator">
+                    <label class="form-check-label" for="userRole3">
+                        Flight Operator
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <input class="btn btn-outline-dark" type="submit" value="Create User" />
+</form>

@@ -24,7 +24,7 @@ namespace airlineBOOM
         public void ConfigureServices(IServiceCollection services)
         {
             // Connection string to my databse
-            string connection = "Server =.; Database = myDatabase; Trusted_Connection = True; MultipleActiveResultSets = true";
+            string connection = "Server =.; Database = airlineBOOM-DB; Trusted_Connection = True; MultipleActiveResultSets = true";
 
             // Connect to my database
             services.AddDbContext<AppDbContext>(options =>
@@ -53,7 +53,7 @@ namespace airlineBOOM
                 options.LoginPath = "/login";
 
                 // Change cookie time out
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(1); // Cokkies expire in one minute currently
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(120); // Cokkies expire in 120 minutes
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -75,7 +75,12 @@ namespace airlineBOOM
             app.UseCookiePolicy();
             app.UseAuthentication();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

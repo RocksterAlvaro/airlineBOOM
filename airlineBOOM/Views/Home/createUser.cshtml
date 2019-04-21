@@ -7,31 +7,68 @@
 <form method="POST">
     <h1>Create user:</h1>
 
+    <!-- Nickname -->
     <div class="row form-group">
-        <label class="col-1 col-form-label">Name:</label>
+        <label class="col-2 col-form-label">Nickname:</label>
         <div class="col-lg-6">
             <input class="form-control" asp-for="UserName" />
         </div>
     </div>
 
+    <!-- Password -->
     <div class="row form-group">
-        <label class="col-1 col-form-label">Email:</label>
-        <div class="col-lg-6">
-            <input class="form-control" asp-for="Email" />
-        </div>
-    </div>
-
-    <div class="row form-group">
-        <label class="col-1 col-form-label">Password:</label>
+        <label class="col-2 col-form-label">Password:</label>
         <div class="col-lg-6">
             <input type="password" class="form-control" asp-for="Password" />
         </div>
     </div>
 
+    <!-- Full name -->
+    <div class="row form-group">
+        <label class="col-2 col-form-label">Full name:</label>
+        <div class="col-lg-6">
+            <input class="form-control" asp-for="Name" />
+        </div>
+    </div>
+
+    <!-- Identity document -->
+    <div class="row form-group">
+        <label class="col-2 col-form-label">Identity document:</label>
+        <div class="col-lg-6">
+            <input class="form-control" asp-for="IdentityDocument" />
+        </div>
+    </div>
+
+    <!-- Employee number -->
+    <div class="row form-group">
+        <label class="col-2 col-form-label">Employee number:</label>
+        <div class="col-lg-6">
+            <input class="form-control" asp-for="EmployeeNumber" />
+        </div>
+    </div>
+
+    <!-- Born date -->
+    <div class="row form-group">
+        <label class="col-2 col-form-label">Born date:</label>
+        <div class="col-lg-6">
+            <input type="date" class="form-control" asp-for="BornDate" />
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div class="row form-group">
+        <label class="col-2 col-form-label">Email:</label>
+        <div class="col-lg-6">
+            <input class="form-control" asp-for="Email" />
+        </div>
+    </div>
+
+    <!-- Select role -->
     <fieldset class="form-group">
         <div class="row">
-            <label class="col-1 col-form-label">Cargo:</label>
+            <label class="col-2 col-form-label">Role:</label>
             <div class="col-lg-6">
+                <!-- Pilot role -->
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="userRole" value="Pilot">
                     <label class="form-check-label" for="userRole1">
@@ -39,6 +76,7 @@
                     </label>
                 </div>
 
+                <!-- Office role -->
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="userRole" value="Office">
                     <label class="form-check-label" for="userRole2">
@@ -46,6 +84,7 @@
                     </label>
                 </div>
 
+                <!-- Flight operator role -->
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="userRole" value="FlightOperator">
                     <label class="form-check-label" for="userRole3">

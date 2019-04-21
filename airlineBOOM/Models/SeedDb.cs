@@ -15,8 +15,9 @@ namespace airlineBOOM.Models
         {
             using (var context = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
+                Console.WriteLine("\n Looking for a database... \n");
 
-                // Look for any data
+                // Look for a database
                 if (!context.Database.EnsureCreated())
                 {
                     // Debug message
@@ -31,10 +32,9 @@ namespace airlineBOOM.Models
                     string message = "\n A new database has been created. \n";
                     Console.WriteLine(message);
 
-                    // Create meteorology, visibility & setoff values in the database
-                    #region seed database with metereology, visibility & setoff values
-                    // Create meteorology values in the database
-                    
+                    // Create & seed meteorology, visibility & setoff values in the database
+                    #region metereology, visibility & setoff values
+                    // Seed meteorology values
                     context.Meteorologies.AddRange(
                         new Meteorology
                         {
@@ -212,6 +212,99 @@ namespace airlineBOOM.Models
                     );
                     #endregion
 
+                    // Create & seed cities values
+                    #region Create cities values
+                    // Seed cities values
+                    context.Cities.AddRange(
+                        new City
+                        {
+                            Name = "bucaramanga"
+                        },
+                        new City
+                        {
+                            Name = "cucuta"
+                        },
+                        new City
+                        {
+                            Name = "bogota"
+                        },
+                        new City
+                        {
+                            Name = "medellin"
+                        }
+                    );
+                    #endregion
+
+                    // Create & seed default flight settings
+                    #region Create default flight settings
+                    // Seed default flight settings
+                    context.FlightSettings.AddRange(
+                        new FlightSetting(
+                            context.Meteorologies.Find(2.0),
+                            context.Visibilities.Find(2.0),
+                            context.Setoffs.Find(2.0)
+                            ),
+                        new FlightSetting(
+                            context.Meteorologies.Find(2.0),
+                            context.Visibilities.Find(6.0),
+                            context.Setoffs.Find(2.0)
+                            ),
+                        new FlightSetting(
+                            context.Meteorologies.Find(7.0),
+                            context.Visibilities.Find(2.0),
+                            context.Setoffs.Find(2.0)
+                            ),
+                        new FlightSetting(
+                            context.Meteorologies.Find(2.0),
+                            context.Visibilities.Find(2.0),
+                            context.Setoffs.Find(8.0)
+                            ),
+                        new FlightSetting(
+                            context.Meteorologies.Find(6.0),
+                            context.Visibilities.Find(5.0),
+                            context.Setoffs.Find(8.0)
+                            )
+                    );
+                    #endregion
+
+                    // Create & seed flights values
+                    #region Create flights values
+
+                    // Find cities for the seed flight
+                    City bogota = context.Cities.Find("bogota");
+                    City bucaramanga = context.Cities.Find("bucaramanga");
+                    City cucuta = context.Cities.Find("cucuta");
+                    City medellin = context.Cities.Find("medellin");
+
+                    // Seed flights values
+                    context.Flights.AddRange(
+                        new Flight
+                        {
+                            Hours = 3,
+                            AirplaneState = "Fine",
+                            TicketsSold = 30,
+                            Origin = bogota,
+                            Destiny = bucaramanga
+                        },
+                        new Flight
+                        {
+                            Hours = 2,
+                            AirplaneState = "Regular",
+                            TicketsSold = 25,
+                            Origin = medellin,
+                            Destiny = cucuta
+                        },
+                        new Flight
+                        {
+                            Hours = 5,
+                            AirplaneState = "Excelent",
+                            TicketsSold = 40,
+                            Origin = medellin,
+                            Destiny = bogota
+                        }
+                    );
+                    #endregion
+
                     // Save the data samples
                     context.SaveChanges();
 
@@ -229,7 +322,7 @@ namespace airlineBOOM.Models
             var UserManager = serviceProvider.GetRequiredService<UserManager<AppUser>>();
 
             // Roles in the project
-            string[] roleNames = { "Pilot", "Office", "FlightOperator" };
+            string[] roleNames = { "Pilot", "Office", "FlightOperator", "Hostess" };
 
             IdentityResult roleResult;
 
@@ -246,6 +339,71 @@ namespace airlineBOOM.Models
                 }
 
             }
+
+            #region Create custom users & set respective roles
+            // create custom users
+            var officeUser = new AppUser
+            {
+                UserName = "paulita",
+                Email = "paulita@",
+                Password = "paulita"
+
+            };
+
+            var pilots = new AppUser[] {
+                new AppUser
+                {
+                    Name = "pablito",
+                    IdentityDocument = 80421514,
+                    EmployeeNumber = 52641958,
+                    UserName = "pcastellanos",
+                    Email = "pablito@",
+                    Password = "pablito",
+                    BornDate = new DateTime(1990, 6, 20)
+                },
+                new AppUser
+                {
+                    Name = "pedrito",
+                    IdentityDocument = 1098808192,
+                    EmployeeNumber = 62549214,
+                    UserName = "privero",
+                    Email = "pedrito@",
+                    Password = "pedrito",
+                    BornDate = new DateTime(1992, 8, 10)
+                },
+                new AppUser
+                {
+                    Name = "juanito",
+                    IdentityDocument = 68291219,
+                    EmployeeNumber = 79542618,
+                    UserName = "jlopez",
+                    Email = "juanito@",
+                    Password = "juanito",
+                    BornDate = new DateTime(1988, 2, 16)
+                }
+            };
+
+            var flightOperatorUser = new AppUser
+            {
+                UserName = "alvaro",
+                Email = "alvaro@",
+                Password = "alvaro"
+
+            };
+
+            foreach(var pilot in pilots)
+            {
+                await UserManager.CreateAsync(pilot, pilot.Password);
+                await UserManager.AddToRoleAsync(pilot, "Pilot");
+            }
+
+            await UserManager.CreateAsync(officeUser, officeUser.Password);
+            await UserManager.AddToRoleAsync(officeUser, "Office");
+
+
+            await UserManager.CreateAsync(flightOperatorUser, flightOperatorUser.Password);
+            await UserManager.AddToRoleAsync(flightOperatorUser, "FlightOperator");
+            #endregion
         }
     }
 }

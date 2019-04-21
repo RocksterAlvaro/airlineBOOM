@@ -15,9 +15,8 @@ namespace airlineBOOM.Data
 
         // My tables
         public DbSet<Flight> Flights { get; set; }
-        public DbSet<Pilot> Pilots { get; set; }
         public DbSet<City> Cities { get; set; }
-        public DbSet<SimulatorTest> SimulatorTests { get; set; }
+        public DbSet<PilotTest> PilotTests { get; set; }
         public DbSet<FlightSetting> FlightSettings { get; set; }
         public DbSet<Visibility> Visibilities { get; set; }
         public DbSet<Meteorology> Meteorologies { get; set; }

@@ -1,0 +1,57 @@
+﻿<!-- Dependency injection -->
+@model airlineBOOM.Models.FlightSetting
+
+<!-- Page itself -->
+@{
+    ViewData["Title"] = "Create Flight Setting";
+}
+
+<form asp-controller="office" asp-action="createFlightSetting" method="POST">
+    <h1> Create Flight Setting </h1>
+
+    <!-- #region Meteorology, visibility & setoff values of the flight setting -->
+    <!-- Meteorology -->
+    <h2 class="mt-2"> Meteorology </h2>
+
+    <!-- Meteorology score -->
+    @for (int i = 0; i <= 10; i++)
+    {
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="flightSettingMeteorology" value=@i>
+            <label class="form-check-label">
+                @i
+            </label>
+        </div>
+    }
+
+    <!-- Visibility -->
+    <h2 class="mt-2"> Visibility </h2>
+
+    <!-- Visibility score -->
+    @for (int i = 0; i <= 10; i++)
+    {
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="flightSettingVisibility" value=@i>
+            <label class="form-check-label">
+                @i
+            </label>
+        </div>
+    }
+
+    <!-- Setoff -->
+    <h2 class="mt-2"> Setoff </h2>
+
+    <!-- Setoff score -->
+    @for (int i = 0; i <= 10; i++)
+    {
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="flightSettingSetoff" value=@i>
+            <label class="form-check-label">
+                @i
+            </label>
+        </div>
+    }
+    <!-- #endregion -->
+
+    <input class="d-block mt-3 btn btn-outline-dark" type="submit" asp-page-handler="createFlight" value="Create flight setting" />
+</form>

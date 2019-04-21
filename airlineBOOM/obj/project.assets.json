@@ -12730,11 +12730,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\El Alvaro\\Desktop\\AirlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
+      "projectUniqueName": "C:\\Users\\El Alvaro\\Desktop\\airlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
       "projectName": "airlineBOOM",
-      "projectPath": "C:\\Users\\El Alvaro\\Desktop\\AirlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
+      "projectPath": "C:\\Users\\El Alvaro\\Desktop\\airlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
       "packagesPath": "C:\\Users\\El Alvaro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\El Alvaro\\Desktop\\AirlineBOOM\\airlineBOOM\\obj\\",
+      "outputPath": "C:\\Users\\El Alvaro\\Desktop\\airlineBOOM\\airlineBOOM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

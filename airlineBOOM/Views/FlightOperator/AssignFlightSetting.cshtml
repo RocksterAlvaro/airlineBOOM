@@ -1,0 +1,77 @@
+﻿<!-- Dependency injection -->
+@model airlineBOOM.Models.FlightSetting
+
+<!-- Page itself -->
+@{
+    ViewData["Title"] = "Assign Flight Setting";
+}
+
+<!-- Flight setting of the simulation test -->
+<h1>Assign flight crew: Page 1</h1>
+
+<form asp-controller="flightOperator" asp-action="PostAssignFlightSetting" method="POST">
+    <fieldset class="form-group">
+        <div class="row">
+            <!-- Flights -->
+            <h3>Flights:</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Origin city</th>
+                        <th scope="col">Destiny city</th>
+                        <th scope="col">Hours of flight</th>
+                        <th scope="col">Tickets sold</th>
+                    </tr>
+                </thead>
+
+                @foreach (var flight in ViewBag.flights)
+                {
+                    <tr>
+                        <td class="form-check">
+                            <input class="ml-3 form-check-input" type="radio" name="selectedFlight" value="@flight.Id">
+                        </td>
+                        <td class="text-capitalize">@flight.Origin.Name</td>
+                        <td class="text-capitalize">@flight.Destiny.Name</td>
+                        <td>@flight.Hours</td>
+                        <td>@flight.TicketsSold</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+        <div class="row">
+
+            <!-- Flight settings -->
+            <h3>Flight Settings:</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Flight Setting Meteorology</th>
+                        <th scope="col">Flight Setting Visibility</th>
+                        <th scope="col">Flight Setting Setoff</th>
+                        <th scope="col">Total Difficulty</th>
+                    </tr>
+                </thead>
+
+                @foreach (var flightSetting in ViewBag.flightSettings)
+                {
+                    <tr>
+                        <td class="form-check">
+                            <input class="ml-3 form-check-input" type="radio" name="selectedSetting" value="@flightSetting.Id">
+                        </td>
+                        <td class="text-capitalize">@flightSetting.FlightSettingMeteorology.Score</td>
+                        <td class="text-capitalize">@flightSetting.FlightSettingVisibility.Score</td>
+                        <td>@flightSetting.FlightSettingSetoff.Score</td>
+                        <td>@flightSetting.TotalScore</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </fieldset>
+
+    <input class="btn btn-outline-dark" type="submit" asp-page-handler="PostAssignFlightSetting" value="Next" />
+</form>

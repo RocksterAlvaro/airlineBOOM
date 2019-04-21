@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace airlineBOOM.Models
 {
     // Custom table
     public class City
     {
-        // Unique ID
-        public string Id { get; set; }
-
         // Parameters
-        public string name { get; set; }
+        [Key]
+        public string Name { get; set; }
+
+        // To be debated
         public string airportCondition { get; set; }
         public string terrainCondition { get; set; }
     }

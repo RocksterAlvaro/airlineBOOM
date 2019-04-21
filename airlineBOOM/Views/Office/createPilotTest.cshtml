@@ -1,0 +1,140 @@
+﻿<!-- Dependency injection -->
+@model airlineBOOM.Models.PilotTest
+
+<!-- Page itself -->
+@{
+    ViewData["Title"] = "Create Pilot Test";
+}
+
+<form asp-controller="office" asp-action="createPilotTest" method="POST">
+    <h1> Create Pilot Test </h1>
+
+    <!-- Year of the simulation -->
+    <div class="d-block col-md-6 my-1">
+        <h3>
+            <label> Year of the simulation test: </label>
+        </h3>
+
+        <select class="col-md-6 custom-select" name="selectedYear">
+            <option selected>Choose year...</option>
+
+            @for (int i = (DateTime.Now.Year - 10); i <= DateTime.Now.Year; i++)
+            {
+                <option value="@i"> @i </option>
+            }
+        </select>
+    </div>
+
+    <!-- Pilot to assign the simulation test -->
+    <h3 class="mt-3">Pilots:</h3>
+
+    <fieldset class="form-group">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">UserName</th>
+                        <th scope="col">Identity document</th>
+                        <th scope="col">Born date</th>
+                    </tr>
+                </thead>
+
+                @foreach (var pilot in ViewBag.pilots)
+                {
+                    <tr>
+                        <td class="form-check">
+                            <input class="ml-3 form-check-input" type="radio" name="selectedPilot" value="@pilot.UserName">
+                        </td>
+                        <td class="text-capitalize">@pilot.Name</td>
+                        <td>@pilot.UserName</td>
+                        <td>@pilot.IdentityDocument</td>
+                        <td>@pilot.BornDate.ToString("d")</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </fieldset>
+
+    <!-- Flight setting of the simulation test -->
+    <h3>Flight Settings:</h3>
+
+    <fieldset class="form-group">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Flight Setting Meteorology</th>
+                        <th scope="col">Flight Setting Visibility</th>
+                        <th scope="col">Flight Setting Setoff</th>
+                        <th scope="col">Total Difficulty</th>
+                    </tr>
+                </thead>
+
+                @foreach (var flightSetting in ViewBag.flightSettings)
+                {
+                    <tr>
+                        <td class="form-check">
+                            <input class="ml-3 form-check-input" type="radio" name="selectedSetting" value="@flightSetting.Id">
+                        </td>
+                        <td class="text-capitalize">@flightSetting.FlightSettingMeteorology.Score</td>
+                        <td class="text-capitalize">@flightSetting.FlightSettingVisibility.Score</td>
+                        <td>@flightSetting.FlightSettingSetoff.Score</td>
+                        <td>@flightSetting.TotalScore</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </fieldset>
+
+    <!-- Pilot score of the simulation test -->
+    <h3>Pilot Score:</h3>
+
+    <!-- #region Meteorology, visibility & setoff values of the pilot test -->
+    <!-- Meteorology -->
+    <h4 class="mt-2"> Meteorology </h4>
+
+    <!-- Meteorology score -->
+    @for (int i = 0; i <= 10; i++)
+    {
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="PilotTestMeteorology" value=@i>
+            <label class="form-check-label">
+                @i
+            </label>
+        </div>
+    }
+
+    <!-- Visibility -->
+    <h4 class="mt-2"> Visibility </h4>
+
+    <!-- Visibility score -->
+    @for (int i = 0; i <= 10; i++)
+    {
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="PilotTestVisibility" value=@i>
+            <label class="form-check-label">
+                @i
+            </label>
+        </div>
+    }
+
+    <!-- Setoff -->
+    <h4 class="mt-2"> Setoff </h4>
+
+    <!-- Setoff score -->
+    @for (int i = 0; i <= 10; i++)
+    {
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="PilotTestSetoff" value=@i>
+            <label class="form-check-label">
+                @i
+            </label>
+        </div>
+    }
+    <!-- #endregion -->
+
+    <input class="d-block mt-3 btn btn-outline-dark" type="submit" asp-page-handler="CreatePilotTest" value="Create pilot Test" />
+</form>

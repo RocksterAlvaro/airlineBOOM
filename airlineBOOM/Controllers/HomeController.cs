@@ -36,18 +36,8 @@ namespace airlineBOOM.Controllers
         // Login
         [HttpGet]
         [Route("/home/login", Name = "homeLogin")]
-        public async Task<ActionResult> Login()
+        public ActionResult Login()
         {
-            // This should be removed!
-            if (User.Identity.Name != null)
-            {
-                AppUser myUser = await _userManager.FindByNameAsync(User.Identity.Name);
-                Console.WriteLine("Email from myUser in index:" + myUser.Email);
-
-                ViewBag.AppUser = await _userManager.FindByNameAsync(User.Identity.Name);
-                Console.WriteLine("Email from ViewBag in index:" + ViewBag.AppUser.Email);
-            }
-
             return View("login"); // Redirect to the login page
         }
 
@@ -66,14 +56,14 @@ namespace airlineBOOM.Controllers
         }
 
         //Logout
-        [HttpGet]
+        [HttpPost]
         [Route("/home/logout", Name = "homeLogout")]
         public async Task<ActionResult> Logout(AppUser appUser)
         {
             // Logout any previous session
             await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
 
-            return View("index");
+            return RedirectToAction("index", "home");
         }
 
         // Create user
@@ -94,7 +84,7 @@ namespace airlineBOOM.Controllers
             var result = await _userManager.CreateAsync(appUser, appUser.Password); // Create the user on the database
 
             var userRole = Request.Form["userRole"]; // Get the selected role by the user
-            await _userManager.AddToRoleAsync(appUser, userRole); // Add to the user a role
+            await _userManager.AddToRoleAsync(appUser, userRole); // Add the user a role
 
             if (result.Succeeded) { return RedirectToAction("index", "home"); } // If succeeded return to index
             else { return Content("User creation failed", "text/html"); } // If failed, report it to the user

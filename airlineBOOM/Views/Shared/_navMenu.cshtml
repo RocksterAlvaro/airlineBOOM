@@ -7,25 +7,46 @@
 @if (User.IsInRole("Office"))
 {
     <!-- If the user is in role Office -->
+
+    <!-- Create flight -->
     <li class="nav-item">
-        <a class="nav-link" asp-controller="Office" asp-action="createFlight"> Create flight </a>
+        <a class="nav-link" asp-controller="Office" asp-action="createFlight">| Create flight</a>
+    </li>
+
+    <!-- Create flight setting -->
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Office" asp-action="createFlightSetting">| Create flight setting</a>
+    </li>
+
+    <!-- Create pilot test -->
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Office" asp-action="createPilotTest">| Create pilot test</a>
+    </li>
+}
+else if (User.IsInRole("Pilot"))
+{
+    <!-- If the user is in role Pilot -->
+
+    <!-- See flights -->
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Pilot" asp-action="getFlights">| See flights</a>
     </li>
 }
 else if (User.IsInRole("FlightOperator"))
 {
-    <!-- If the user is in tole Flight Operator -->
+    <!-- If the user is in role Flight Operator -->
 
-}
-else if (User.IsInRole("Pilot"))
-{
-    <!-- If the user is in tole Pilot -->
-
+    <!-- Assign flight crew -->
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="FlightOperator" asp-action="assignFlightSetting">| Assign flight crew</a>
+    </li>
 }
 else
 {
+    <!-- If the user is in no role -->
     <li class="nav-item">
         <div class="m-2">
-            <p class="font-italic"> No role </p>
+            <p class="font-italic text-muted"> | No role | </p>
         </div>
     </li>
 }

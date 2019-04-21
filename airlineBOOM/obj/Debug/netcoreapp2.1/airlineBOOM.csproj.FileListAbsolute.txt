@@ -131,3 +131,8 @@ C:\Users\El Alvaro\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor
 C:\Users\El Alvaro\Desktop\AirlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_log.g.cshtml.cs
 C:\Users\El Alvaro\Desktop\AirlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_navMenu.g.cshtml.cs
 C:\Users\El Alvaro\Desktop\AirlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Office\createFlight.g.cshtml.cs
+C:\Users\El Alvaro\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Office\createFlightSetting.g.cshtml.cs
+C:\Users\El Alvaro\Desktop\AirlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Office\createPilotTest.g.cshtml.cs
+C:\Users\El Alvaro\Desktop\AirlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Pilot\getFlights.g.cshtml.cs
+C:\Users\El Alvaro\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\FlightOperator\AssignFlightCrew.g.cshtml.cs
+C:\Users\El Alvaro\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\FlightOperator\AssignFlightSetting.g.cshtml.cs

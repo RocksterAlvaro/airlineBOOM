@@ -1,0 +1,30 @@
+﻿<!-- Dependency injection -->
+@model airlineBOOM.Models.Flight
+
+<!-- Page itself -->
+@{
+    ViewData["Title"] = "Get Flights";
+}
+
+<h1>Flights:</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Origin city</th>
+            <th scope="col">Destiny city</th>
+            <th scope="col">Hours of flight</th>
+            <th scope="col">Tickets sold</th>
+        </tr>
+    </thead>
+
+    @foreach (var flight in ViewBag.flights)
+    {
+        <tr>
+            <td class="text-capitalize">@flight.Origin.Name</td>
+            <td class="text-capitalize">@flight.Destiny.Name</td>
+            <td>@flight.Hours</td>
+            <td>@flight.TicketsSold</td>
+        </tr>
+    }
+</table>

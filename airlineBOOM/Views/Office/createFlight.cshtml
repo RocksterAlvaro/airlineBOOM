@@ -11,15 +11,56 @@
 
     <h3> General information </h3>
 
+    <!-- Cities of the flight -->
     <div class="form-row">
+
+        <!-- Origin city -->
+        <div class="col-auto my-1">
+            <label class="mr-sm-2"> Origin city </label>
+
+            <select class="custom-select mr-sm-2" name="originCity">
+                <option selected>Choose...</option>
+
+                @foreach (var city in ViewBag.cities)
+                {
+                    <option value="@city.Name"> @city.Name </option>
+                }
+            </select>
+        </div>
+
+        <!-- Destiny city -->
+        <div class="col-auto my-1">
+            <label class="mr-sm-2"> Destiny city </label>
+
+            <select class="custom-select mr-sm-2" name="destinyCity">
+                <option selected>Choose...</option>
+
+                @foreach (var city in ViewBag.cities)
+                {
+                    <option value="@city.Name"> @city.Name </option>
+                }
+            </select>
+        </div>
+
         <!-- Hours of flight -->
-        <div class="col">
+        <div class="col-auto">
+            <label class="mr-sm-2"> Hours of flight </label>
+
             <input type="number" min="1" class="form-control" placeholder="Hours" asp-for="Hours" />
         </div>
 
         <!-- Tickets sold -->
-        <div class="col">
-            <input type="number" min="1" class="form-control" placeholder="Tickets sold" asp-for="TicketsSold" />
+        <div class="col-auto">
+            <label class="mr-sm-2"> Tickets sold </label>
+
+            <input type="number" min="0" class="form-control" placeholder="Tickets sold" asp-for="TicketsSold" />
+        </div>
+
+        <!-- Flight date -->
+        <div class="col-auto">
+            <label class="mr-sm-2"> Flight date </label>
+
+            <input type="date" class="form-control" asp-for="Date" />
         </div>
     </div>
 
@@ -29,249 +70,6 @@
         <div class="col-lg-6">
             <textarea class="form-control" rows="5" asp-for="AirplaneState"></textarea>
         </div>
-    </div>
-
-    <!-- Meteorology -->
-    <h2 class="mt-2"> Meteorology </h2>
-
-    <!-- Meteorology score -->
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="0">
-        <label class="form-check-label">
-            0
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="1">
-        <label class="form-check-label">
-            1
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="2">
-        <label class="form-check-label">
-            2
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="3">
-        <label class="form-check-label">
-            3
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="4">
-        <label class="form-check-label">
-            4
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="5">
-        <label class="form-check-label">
-            5
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="6">
-        <label class="form-check-label">
-            6
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="7">
-        <label class="form-check-label">
-            7
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="8">
-        <label class="form-check-label">
-            8
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="9">
-        <label class="form-check-label">
-            9
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightMeteorology" value="10">
-        <label class="form-check-label">
-            10
-        </label>
-    </div>
-
-    <!-- Visibility -->
-    <h2 class="mt-2"> Visibility </h2>
-
-    <!-- Visibility score -->
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="0">
-        <label class="form-check-label">
-            0
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="1">
-        <label class="form-check-label">
-            1
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="2">
-        <label class="form-check-label">
-            2
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="3">
-        <label class="form-check-label">
-            3
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="4">
-        <label class="form-check-label">
-            4
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="5">
-        <label class="form-check-label">
-            5
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="6">
-        <label class="form-check-label">
-            6
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="7">
-        <label class="form-check-label">
-            7
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="8">
-        <label class="form-check-label">
-            8
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="9">
-        <label class="form-check-label">
-            9
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightVisibility" value="10">
-        <label class="form-check-label">
-            10
-        </label>
-    </div>
-
-    <!-- Setoff -->
-    <h2 class="mt-2"> Setoff </h2>
-
-    <!-- Setoff score -->
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="0">
-        <label class="form-check-label">
-            0
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="1">
-        <label class="form-check-label">
-            1
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="2">
-        <label class="form-check-label">
-            2
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="3">
-        <label class="form-check-label">
-            3
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="4">
-        <label class="form-check-label">
-            4
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="5">
-        <label class="form-check-label">
-            5
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="6">
-        <label class="form-check-label">
-            6
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="7">
-        <label class="form-check-label">
-            7
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="8">
-        <label class="form-check-label">
-            8
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="9">
-        <label class="form-check-label">
-            9
-        </label>
-    </div>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flightSetoff" value="10">
-        <label class="form-check-label">
-            10
-        </label>
     </div>
 
     <input class="d-block mt-3 btn btn-outline-dark" type="submit" asp-page-handler="createFlight" value="Create flight" />

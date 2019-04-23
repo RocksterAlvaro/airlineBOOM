@@ -58,10 +58,13 @@ namespace airlineBOOM.Controllers
         // Office - Create Flight
         [HttpGet]
         [Route("/FlightOperator/AssignFlightCrew", Name = "flightOperatorAssignFlightCrew")]
-        public ActionResult AssignFlightCrew()
+        public async Task<ActionResult> AssignFlightCrewAsync()
         {
-            Console.WriteLine("Type: " + TempData["flight"]);
-            ViewBag.flight = TempData["flight"];
+            // Search and get the onjects from the database of the selected Flight & Flight Setting
+            ViewBag.flightSetting = await _db.FlightSettings.FindAsync(TempData["flightSettingId"]);
+            ViewBag.flight = await _db.Flights.FindAsync(TempData["flightId"]);
+
+
 
             return View("assignFlightCrew");
         }

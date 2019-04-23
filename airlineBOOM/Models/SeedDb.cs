@@ -212,29 +212,6 @@ namespace airlineBOOM.Models
                     );
                     #endregion
 
-                    // Create & seed cities values
-                    #region Create cities values
-                    // Seed cities values
-                    context.Cities.AddRange(
-                        new City
-                        {
-                            Name = "bucaramanga"
-                        },
-                        new City
-                        {
-                            Name = "cucuta"
-                        },
-                        new City
-                        {
-                            Name = "bogota"
-                        },
-                        new City
-                        {
-                            Name = "medellin"
-                        }
-                    );
-                    #endregion
-
                     // Create & seed default flight settings
                     #region Create default flight settings
                     // Seed default flight settings
@@ -264,6 +241,29 @@ namespace airlineBOOM.Models
                             context.Visibilities.Find(5.0),
                             context.Setoffs.Find(8.0)
                             )
+                    );
+                    #endregion
+                    
+                    // Create & seed cities values
+                    #region Create cities values
+                    // Seed cities values
+                    context.Cities.AddRange(
+                        new City
+                        {
+                            Name = "bucaramanga"
+                        },
+                        new City
+                        {
+                            Name = "cucuta"
+                        },
+                        new City
+                        {
+                            Name = "bogota"
+                        },
+                        new City
+                        {
+                            Name = "medellin"
+                        }
                     );
                     #endregion
 
@@ -391,7 +391,7 @@ namespace airlineBOOM.Models
 
             };
 
-            foreach(var pilot in pilots)
+            foreach (var pilot in pilots)
             {
                 await UserManager.CreateAsync(pilot, pilot.Password);
                 await UserManager.AddToRoleAsync(pilot, "Pilot");
@@ -404,6 +404,37 @@ namespace airlineBOOM.Models
             await UserManager.CreateAsync(flightOperatorUser, flightOperatorUser.Password);
             await UserManager.AddToRoleAsync(flightOperatorUser, "FlightOperator");
             #endregion
+
+            using (var context = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
+            {
+                Random rnd = new Random();
+
+                var meteorologies = await context.Meteorologies.ToArrayAsync();
+                var visibilities = await context.Visibilities.ToArrayAsync();
+                var setoffs = await context.Setoffs.ToArrayAsync();
+
+                // Create & seed random test pilots test
+                var flightSettings = await context.FlightSettings.ToArrayAsync();
+                foreach (var pilot in await UserManager.GetUsersInRoleAsync("Pilot"))
+                {
+                    foreach(var flightSetting in flightSettings)
+                    {
+                        context.PilotTests.Add(
+                            new PilotTest()
+                            {
+                                Pilot = pilot,
+                                SimulationSetting = flightSetting,
+                                PilotMeteorologyTest = meteorologies[rnd.Next(0, meteorologies.Length-1)],
+                                PilotVisibilityTest = visibilities[rnd.Next(0, visibilities.Length - 1)],
+                                PilotSetoffTest = setoffs[rnd.Next(0, setoffs.Length - 1)]
+                            }
+                        );
+                    }
+                }
+                
+                // Save the data samples
+                context.SaveChanges();
+            }
         }
     }
 }

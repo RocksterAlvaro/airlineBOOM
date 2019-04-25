@@ -13,18 +13,19 @@ namespace airlineBOOM.Models
     {
         public static void SeedDatabase(IServiceProvider serviceProvider)
         {
-            using (var context = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
+            // Seed DB
+            using (var _db = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
                 Console.WriteLine("\n Looking for a database... \n");
 
                 // Look for a database
-                if (!context.Database.EnsureCreated())
+                if (!_db.Database.EnsureCreated())
                 {
                     // Debug message
                     string message = "\n There is already a database. \n";
                     Console.WriteLine(message);
 
-                    return; // DB has been seeded before
+                    // DB has been seeded before
                 }
                 else
                 {
@@ -35,7 +36,7 @@ namespace airlineBOOM.Models
                     // Create & seed meteorology, visibility & setoff values in the database
                     #region metereology, visibility & setoff values
                     // Seed meteorology values
-                    context.Meteorologies.AddRange(
+                    _db.Meteorologies.AddRange(
                         new Meteorology
                         {
                             Score = 0,
@@ -92,9 +93,9 @@ namespace airlineBOOM.Models
                             Name = "Extremely dangerous sky with dark clouds"
                         }
                     );
-                    
+
                     // Create visibility values in the database
-                    context.Visibilities.AddRange(
+                    _db.Visibilities.AddRange(
                         new Visibility
                         {
                             Score = 0,
@@ -153,7 +154,7 @@ namespace airlineBOOM.Models
                     );
 
                     // Create Setoff values in the database
-                    context.Setoffs.AddRange(
+                    _db.Setoffs.AddRange(
                         new Setoff
                         {
                             Score = 0,
@@ -215,39 +216,39 @@ namespace airlineBOOM.Models
                     // Create & seed default flight settings
                     #region Create default flight settings
                     // Seed default flight settings
-                    context.FlightSettings.AddRange(
+                    _db.FlightSettings.AddRange(
                         new FlightSetting(
-                            context.Meteorologies.Find(2.0),
-                            context.Visibilities.Find(2.0),
-                            context.Setoffs.Find(2.0)
+                            _db.Meteorologies.Find(2.0),
+                            _db.Visibilities.Find(2.0),
+                            _db.Setoffs.Find(2.0)
                             ),
                         new FlightSetting(
-                            context.Meteorologies.Find(2.0),
-                            context.Visibilities.Find(6.0),
-                            context.Setoffs.Find(2.0)
+                            _db.Meteorologies.Find(2.0),
+                            _db.Visibilities.Find(6.0),
+                            _db.Setoffs.Find(2.0)
                             ),
                         new FlightSetting(
-                            context.Meteorologies.Find(7.0),
-                            context.Visibilities.Find(2.0),
-                            context.Setoffs.Find(2.0)
+                            _db.Meteorologies.Find(7.0),
+                            _db.Visibilities.Find(2.0),
+                            _db.Setoffs.Find(2.0)
                             ),
                         new FlightSetting(
-                            context.Meteorologies.Find(2.0),
-                            context.Visibilities.Find(2.0),
-                            context.Setoffs.Find(8.0)
+                            _db.Meteorologies.Find(2.0),
+                            _db.Visibilities.Find(2.0),
+                            _db.Setoffs.Find(8.0)
                             ),
                         new FlightSetting(
-                            context.Meteorologies.Find(6.0),
-                            context.Visibilities.Find(5.0),
-                            context.Setoffs.Find(8.0)
+                            _db.Meteorologies.Find(6.0),
+                            _db.Visibilities.Find(5.0),
+                            _db.Setoffs.Find(8.0)
                             )
                     );
                     #endregion
-                    
+
                     // Create & seed cities values
                     #region Create cities values
                     // Seed cities values
-                    context.Cities.AddRange(
+                    _db.Cities.AddRange(
                         new City
                         {
                             Name = "bucaramanga"
@@ -271,13 +272,13 @@ namespace airlineBOOM.Models
                     #region Create flights values
 
                     // Find cities for the seed flight
-                    City bogota = context.Cities.Find("bogota");
-                    City bucaramanga = context.Cities.Find("bucaramanga");
-                    City cucuta = context.Cities.Find("cucuta");
-                    City medellin = context.Cities.Find("medellin");
+                    City bogota = _db.Cities.Find("bogota");
+                    City bucaramanga = _db.Cities.Find("bucaramanga");
+                    City cucuta = _db.Cities.Find("cucuta");
+                    City medellin = _db.Cities.Find("medellin");
 
                     // Seed flights values
-                    context.Flights.AddRange(
+                    _db.Flights.AddRange(
                         new Flight
                         {
                             Hours = 3,
@@ -306,14 +307,14 @@ namespace airlineBOOM.Models
                     #endregion
 
                     // Save the data samples
-                    context.SaveChanges();
+                    _db.SaveChanges();
 
-                    return; // DB has been seeded now
+                    // DB has been seeded now
                 }
             }
         }
 
-        public static async Task CreateRoles(IServiceProvider serviceProvider, IConfiguration Configuration)
+        public static async Task CreateRoles(IServiceProvider serviceProvider)
 
         {
             //adding customs roles
@@ -405,36 +406,43 @@ namespace airlineBOOM.Models
             await UserManager.AddToRoleAsync(flightOperatorUser, "FlightOperator");
             #endregion
 
-            using (var context = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
+
+            using (var _db = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
+                _db.SaveChanges();
+
                 Random rnd = new Random();
 
-                var meteorologies = await context.Meteorologies.ToArrayAsync();
-                var visibilities = await context.Visibilities.ToArrayAsync();
-                var setoffs = await context.Setoffs.ToArrayAsync();
+                var meteorologies = await _db.Meteorologies.ToArrayAsync();
+                var visibilities = await _db.Visibilities.ToArrayAsync();
+                var setoffs = await _db.Setoffs.ToArrayAsync();
 
                 // Create & seed random test pilots test
-                var flightSettings = await context.FlightSettings.ToArrayAsync();
-                foreach (var pilot in await UserManager.GetUsersInRoleAsync("Pilot"))
+                var myPilots = await UserManager.GetUsersInRoleAsync("Pilot");
+                var flightSettings = await _db.FlightSettings.ToArrayAsync();
+                foreach (var pilot in pilots)
                 {
-                    foreach(var flightSetting in flightSettings)
+                    foreach (var flightSetting in flightSettings)
                     {
-                        context.PilotTests.Add(
-                            new PilotTest()
+                        await _db.PilotTests.AddAsync(
+                            new PilotTest
                             {
-                                Pilot = pilot,
+                                PilotId = pilot.Id,
                                 SimulationSetting = flightSetting,
                                 PilotMeteorologyTest = meteorologies[rnd.Next(0, meteorologies.Length-1)],
                                 PilotVisibilityTest = visibilities[rnd.Next(0, visibilities.Length - 1)],
                                 PilotSetoffTest = setoffs[rnd.Next(0, setoffs.Length - 1)]
+                                
                             }
                         );
                     }
                 }
-                
+
                 // Save the data samples
-                context.SaveChanges();
+                _db.SaveChanges();
+                
             }
+            
         }
     }
 }

@@ -10,7 +10,7 @@ namespace airlineBOOM.Models
         public string Name { get; set; }
 
         // To be debated
-        public string airportCondition { get; set; }
-        public string terrainCondition { get; set; }
+        public string AirportCondition { get; set; }
+        public string TerrainCondition { get; set; }
     }
 }

@@ -16,7 +16,10 @@ namespace airlineBOOM
 
             using (var scope = host.Services.CreateScope())
             {
+                // Get services
                 var services = scope.ServiceProvider;
+
+                
 
                 // Create/Seed the database
                 Seeds.SeedDatabase(services);
@@ -24,7 +27,7 @@ namespace airlineBOOM
                 // Create the roles for the application
                 var serviceProvider = services.GetRequiredService<IServiceProvider>();
                 var configuration = services.GetRequiredService<IConfiguration>();
-                Seeds.CreateRoles(serviceProvider, configuration).Wait();
+                Seeds.CreateRoles(serviceProvider).Wait();
             }
 
             host.Run();

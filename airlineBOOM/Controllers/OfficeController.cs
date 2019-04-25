@@ -109,7 +109,8 @@ namespace airlineBOOM.Controllers
             pilotTest.TestYear = new DateTime(Int32.Parse(Request.Form["selectedYear"]), 1, 1);
 
             // Search & assign the selected pilot
-            pilotTest.Pilot = await _userManager.FindByNameAsync(Request.Form["selectedPilot"]);
+            AppUser pilot = await _userManager.FindByNameAsync(Request.Form["selectedPilot"]);
+            pilotTest.PilotId = pilot.Id;
 
             // Search & assign the selected setting
             pilotTest.SimulationSetting = await _db.FlightSettings.FindAsync(Request.Form["selectedSetting"]);
@@ -120,7 +121,7 @@ namespace airlineBOOM.Controllers
             pilotTest.PilotSetoffTest = await _db.Setoffs.FindAsync(double.Parse(Request.Form["pilotTestSetoff"]));
 
             // Calculate total score
-            pilotTest.calculatePilotTestScore();
+            pilotTest.CalculatePilotTestScore();
 
             // Save changes in local memory
             var result = await _db.PilotTests.AddAsync(pilotTest);

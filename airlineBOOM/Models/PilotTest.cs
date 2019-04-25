@@ -1,22 +1,24 @@
 ﻿using airlineBOOM.Models.FlightSettingVariables;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace airlineBOOM.Models
 {
     // Custom table
     public class PilotTest
     {
-        public void calculatePilotTestScore()
+        public void CalculatePilotTestScore()
         {
             double tempToTalScore = (PilotVisibilityTest.Score + PilotMeteorologyTest.Score + PilotSetoffTest.Score) / 3;
             PilotTestScore = Math.Round(tempToTalScore, 2);
         }
 
         // Unique ID
+        [Key]
         public string Id { get; set; }
 
         // The pilot responsible for this test
-        public AppUser Pilot { get; set; }
+        public string PilotId { get; set; }
 
         // FlightSetting of the simulation
         public FlightSetting SimulationSetting { get; set; }

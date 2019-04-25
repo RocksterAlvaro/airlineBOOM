@@ -104,18 +104,6 @@ C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1
 C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\airlineBOOM.TagHelpers.input.cache
 C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\airlineBOOM.TagHelpers.output.cache
 C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\airlineBOOM.RazorCoreGenerate.cache
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\About.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\Contact.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\Error.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\Index.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\MyPages\CreateUser.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\MyPages\Login.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\Privacy.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\Shared\_CookieConsentPartial.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\Shared\_Layout.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewImports.g.cshtml.cs
-C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewStart.g.cshtml.cs
 C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\airlineBOOM.RazorTargetAssemblyInfo.cache
 C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\airlineBOOM.RazorTargetAssemblyInfo.cs
 C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\airlineBOOM.Views.pdb
@@ -136,3 +124,17 @@ C:\Users\El Alvaro\Desktop\AirlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor
 C:\Users\El Alvaro\Desktop\AirlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Pilot\getFlights.g.cshtml.cs
 C:\Users\El Alvaro\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\FlightOperator\AssignFlightCrew.g.cshtml.cs
 C:\Users\El Alvaro\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\FlightOperator\AssignFlightSetting.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\FlightOperator\AssignFlightCrew.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\FlightOperator\AssignFlightSetting.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Home\createUser.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Home\index.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Office\createFlight.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Office\createFlightSetting.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Office\createPilotTest.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Pilot\getFlights.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_log.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_navMenu.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Rockster_Laptop\Desktop\airlineBOOM\airlineBOOM\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs

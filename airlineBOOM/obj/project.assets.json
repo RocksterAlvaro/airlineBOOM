@@ -12724,23 +12724,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\El Alvaro\\.nuget\\packages\\": {},
+    "C:\\Users\\Rockster_Laptop\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\El Alvaro\\Desktop\\AirlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
+      "projectUniqueName": "C:\\Users\\Rockster_Laptop\\Desktop\\airlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
       "projectName": "airlineBOOM",
-      "projectPath": "C:\\Users\\El Alvaro\\Desktop\\AirlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
-      "packagesPath": "C:\\Users\\El Alvaro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\El Alvaro\\Desktop\\AirlineBOOM\\airlineBOOM\\obj\\",
+      "projectPath": "C:\\Users\\Rockster_Laptop\\Desktop\\airlineBOOM\\airlineBOOM\\airlineBOOM.csproj",
+      "packagesPath": "C:\\Users\\Rockster_Laptop\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rockster_Laptop\\Desktop\\airlineBOOM\\airlineBOOM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\El Alvaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rockster_Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12780,7 +12780,6 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

@@ -338,7 +338,6 @@ namespace airlineBOOM.Models
                 {
                     roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
                 }
-
             }
 
             #region Create custom users & set respective roles
@@ -406,11 +405,8 @@ namespace airlineBOOM.Models
             await UserManager.AddToRoleAsync(flightOperatorUser, "FlightOperator");
             #endregion
 
-
             using (var _db = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
-                _db.SaveChanges();
-
                 Random rnd = new Random();
 
                 var meteorologies = await _db.Meteorologies.ToArrayAsync();

@@ -23,7 +23,7 @@ namespace airlineBOOM.Controllers
             _userManager = userManager;
         }
 
-        // Office - Assign Flight Setting
+        // Flight Operator - Assign Flight Setting
         [HttpGet]
         [Route("/FlightOperator/AssignFlightSetting", Name = "flightOperatorAssignFlightSetting")]
         public ActionResult AssignFlightSetting()
@@ -32,7 +32,7 @@ namespace airlineBOOM.Controllers
             ViewBag.flightSettings = _db.FlightSettings
                 .Include(flightSetting => flightSetting.FlightSettingMeteorology)
                 .Include(flightSetting => flightSetting.FlightSettingVisibility)
-                .Include(flightSetting => flightSetting.FlightSettingSetoff); ;
+                .Include(flightSetting => flightSetting.FlightSettingSetoff);
 
             // Search and return all flights
             ViewBag.flights = _db.Flights
@@ -60,11 +60,25 @@ namespace airlineBOOM.Controllers
         [Route("/FlightOperator/AssignFlightCrew", Name = "flightOperatorAssignFlightCrew")]
         public async Task<ActionResult> AssignFlightCrewAsync()
         {
-            // Search and get the onjects from the database of the selected Flight & Flight Setting
-            ViewBag.flightSetting = await _db.FlightSettings.FindAsync(TempData["flightSettingId"]);
-            ViewBag.flight = await _db.Flights.FindAsync(TempData["flightId"]);
+            // Get all the FlightSettings
+            var FlightSettings = _db.FlightSettings
+                .Include(flightSetting => flightSetting.FlightSettingMeteorology)
+                .Include(flightSetting => flightSetting.FlightSettingVisibility)
+                .Include(flightSetting => flightSetting.FlightSettingSetoff);
 
+            // Get all the Flights
+            var Flights = _db.Flights
+                .Include(flight => flight.Origin)
+                .Include(flight => flight.Destiny);
 
+            // Get all pilots
+            var pilots = await _userManager.GetUsersInRoleAsync("Pilot");
+
+            // Get the selected FlightSetting
+            ViewBag.flightSetting = FlightSettings.SingleOrDefault(flightSetting => flightSetting.Id == TempData["flightSettingId"].ToString());
+
+            // Get the selected Flight
+            ViewBag.flight = Flights.SingleOrDefault(flight => flight.Id == TempData["flightId"].ToString());
 
             return View("assignFlightCrew");
         }

@@ -18,9 +18,7 @@ namespace airlineBOOM
             {
                 // Get services
                 var services = scope.ServiceProvider;
-
                 
-
                 // Create/Seed the database
                 Seeds.SeedDatabase(services);
 

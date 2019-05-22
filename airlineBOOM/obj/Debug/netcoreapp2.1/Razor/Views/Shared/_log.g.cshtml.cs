@@ -89,7 +89,7 @@ using airlineBOOM.Models;
             WriteLiteral("                <!-- If the user is in role Office -->\r\n                <li class=\"nav-item m-1\">\r\n                    ");
             EndContext();
             BeginContext(487, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f033e3b6446945dd952a0df1da81012a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70b06a1760514909bd3262eb4b8ed2df", async() => {
                 BeginContext(545, 1, true);
                 WriteLiteral(" ");
                 EndContext();
@@ -132,7 +132,7 @@ using airlineBOOM.Models;
             WriteLiteral("                <!-- If the user is in role Pilot -->\r\n                <li class=\"nav-item m-1\">\r\n                    ");
             EndContext();
             BeginContext(802, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3793952e429a4542977f1ef55972da22", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ac71d73fdfa452a9813867d4932d89a", async() => {
                 BeginContext(860, 1, true);
                 WriteLiteral(" ");
                 EndContext();
@@ -175,7 +175,7 @@ using airlineBOOM.Models;
             WriteLiteral("                <!-- If the user is in role Flight operator -->\r\n                <li class=\"nav-item m-1\">\r\n                    ");
             EndContext();
             BeginContext(1098, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cbc1da350464676999a74e397420401", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "109155bf905e4aa0b0f886a18cb6f164", async() => {
                 BeginContext(1156, 1, true);
                 WriteLiteral(" ");
                 EndContext();
@@ -216,7 +216,7 @@ using airlineBOOM.Models;
             WriteLiteral("            <li class=\"nav-item m-1\">\r\n                ");
             EndContext();
             BeginContext(1300, 178, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57e0b8a904fb4ca0a1272fe7e749c091", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e88508f428c547cb860842ff3b0c7ccb", async() => {
                 BeginContext(1362, 109, true);
                 WriteLiteral("\r\n                    <input class=\"btn btn-outline-danger\" type=\"submit\" value=\"Logout\" />\r\n                ");
                 EndContext();
@@ -255,7 +255,7 @@ using airlineBOOM.Models;
             WriteLiteral("            <!-- If the user is NOT signed in -->\r\n            <li class=\"nav-item m-1\">\r\n                ");
             EndContext();
             BeginContext(1643, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6bf65e19c2fe4c5a9b44681d3bb9c81e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77d4965dea08443e8c1cbdac28e74cdf", async() => {
                 BeginContext(1698, 7, true);
                 WriteLiteral(" Login ");
                 EndContext();
@@ -281,7 +281,7 @@ using airlineBOOM.Models;
             WriteLiteral("            <li class=\"nav-item m-1\">\r\n                ");
             EndContext();
             BeginContext(1787, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00fcf25c5e0d4c11939c495f25e596b4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6371d7efb0d041c3a2abc5a048cdeaa7", async() => {
                 BeginContext(1856, 13, true);
                 WriteLiteral(" Create User ");
                 EndContext();

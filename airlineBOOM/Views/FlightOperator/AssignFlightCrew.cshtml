@@ -8,4 +8,93 @@
 
 <h1>Assign flight crew: Page 2</h1>
 
-<p>@ViewBag.flight.Hours</p>
+<form asp-controller="flightOperator" asp-action="PostAssignFlightCrew" method="POST">
+
+    <fieldset class="form-group">
+        <div class="row">
+            <!-- Selected Flight -->
+            <h3>Selected Flight:</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Origin</th>
+                        <th scope="col">Destiny</th>
+                        <th scope="col">Hours of flight</th>
+                        <th scope="col">Tickets sold</th>
+                    </tr>
+                </thead>
+
+                <tr>
+                    <td>@ViewBag.flight.Origin.Name</td>
+                    <td>@ViewBag.flight.Destiny.Name</td>
+                    <td>@ViewBag.flight.Hours</td>
+                    <td>@ViewBag.flight.TicketsSold</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row">
+            <!-- Selected FlightSetting -->
+            <h3>Selected Flight Setting:</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Meteorology Score</th>
+                        <th scope="col">Visibility Score</th>
+                        <th scope="col">Setoff Score</th>
+                        <th scope="col">Total Score</th>
+                    </tr>
+                </thead>
+
+                <tr>
+                    <td>@ViewBag.flightSetting.FlightSettingMeteorology.Score</td>
+                    <td>@ViewBag.flightSetting.FlightSettingVisibility.Score</td>
+                    <td>@ViewBag.flightSetting.FlightSettingSetoff.Score</td>
+                    <td>@ViewBag.flightSetting.TotalScore</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row">
+            <!-- FlightTests -->
+            <h3>Flight Tests:</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Pilot Name</th>
+                        <th scope="col">Meteorology Score</th>
+                        <th scope="col">Visibility Score</th>
+                        <th scope="col">Setoff Score</th>
+                        <th scope="col">Total Score</th>
+                    </tr>
+                </thead>
+
+                @foreach (var pilotTest in ViewBag.pilotTests)
+                {
+                    <tr>
+                        
+                        @foreach (var pilot in ViewBag.pilots)
+                        {
+                            @if (pilot.Id == @pilotTest.PilotId)
+                            {
+                                <td class="form-check">
+                                    <input class="ml-3 form-check-input" type="radio" name="selectedPilot" value="@pilot.Id">
+                                </td>
+
+                                <td class="text-capitalize">@pilot.Name</td>
+                            }
+                        }
+                        <td>@pilotTest.PilotMeteorologyTest.Score</td>
+                        <td>@pilotTest.PilotVisibilityTest.Score</td>
+                        <td>@pilotTest.PilotSetoffTest.Score</td>
+                        <td>@pilotTest.PilotTestScore</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </fieldset>
+
+    <input class="btn btn-outline-dark" type="submit" asp-page-handler="PostAssignFlighCrew" value="Assign Pilot" />
+</form>

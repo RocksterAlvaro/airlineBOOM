@@ -59,7 +59,7 @@ using airlineBOOM;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n    ");
             EndContext();
             BeginContext(29, 1214, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f87325bbfa343bcb6f12a5310f501a5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c23c2047e34b4d4f8a6217475bd632bb", async() => {
                 BeginContext(35, 133, true);
                 WriteLiteral("\r\n        <meta charset=\"utf-8\" />\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n        <title>");
                 EndContext();
@@ -74,7 +74,7 @@ using airlineBOOM;
                 WriteLiteral(" - airlineBOOM</title>\r\n\r\n        ");
                 EndContext();
                 BeginContext(220, 500, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0178828c4c4a442b96b8e18b112cef13", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1103ebba733a49f2932ed007586e1a2b", async() => {
                     BeginContext(255, 451, true);
                     WriteLiteral(@"
             <link rel=""stylesheet"" href=""https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"" integrity=""sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"" crossorigin=""anonymous"">
@@ -99,7 +99,7 @@ using airlineBOOM;
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(730, 500, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1948341036de470da0c4fc2f552dd41d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b9e99cc44e84504aaeb4fa3ea0870eb", async() => {
                     BeginContext(765, 451, true);
                     WriteLiteral(@"
             <link rel=""stylesheet"" href=""https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"" integrity=""sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"" crossorigin=""anonymous"">
@@ -139,7 +139,7 @@ using airlineBOOM;
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(1249, 834, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fff45974935349cda6e7d25582f701f5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54c1bd217c5141f992dc250ef9cc6532", async() => {
                 BeginContext(1255, 276, true);
                 WriteLiteral(@"
         <!-- Navbar -->
@@ -150,7 +150,7 @@ using airlineBOOM;
                         ");
                 EndContext();
                 BeginContext(1531, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d71cee2653241cdbdb66f797c4e9dd2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "569d7f25b1754115b02d061823d0c27d", async() => {
                     BeginContext(1592, 6, true);
                     WriteLiteral(" Home ");
                     EndContext();
@@ -175,7 +175,7 @@ using airlineBOOM;
                 WriteLiteral("\r\n                    </li>\r\n\r\n                    ");
                 EndContext();
                 BeginContext(1653, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ce5d656722ba456c868ddb7e01f62e2c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "866bf579c61048dcb45e90eb598b01ed", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -194,7 +194,7 @@ using airlineBOOM;
                 WriteLiteral("\r\n                </ul>\r\n\r\n                <!-- Login / Logout buttons -->\r\n                ");
                 EndContext();
                 BeginContext(1779, 30, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "59bb4c5fb8414d6a9e1027d850289563", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a99ea98bbf849ac809017dc33faf9ad", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

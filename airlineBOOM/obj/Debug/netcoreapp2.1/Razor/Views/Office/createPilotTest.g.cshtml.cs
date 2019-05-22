@@ -70,7 +70,7 @@ using airlineBOOM;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(147, 4720, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7d1af8bc80d4d4babf562ad193a6264", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88855610e92144a2991c5e0206b9013d", async() => {
                 BeginContext(220, 287, true);
                 WriteLiteral(@"
     <h1> Create Pilot Test </h1>
@@ -85,7 +85,7 @@ using airlineBOOM;
             ");
                 EndContext();
                 BeginContext(507, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d894a1e44cf24dfca87324f901f7c1bf", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b071d55053f24bc1b0b5bee9e8ba6869", async() => {
                     BeginContext(524, 14, true);
                     WriteLiteral("Choose year...");
                     EndContext();
@@ -117,7 +117,7 @@ using airlineBOOM;
                 WriteLiteral("                ");
                 EndContext();
                 BeginContext(664, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5e7be4beca70403d9f06fd95212fa058", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b068c6a69f624177a4f7be849851b658", async() => {
                     BeginContext(683, 1, true);
                     WriteLiteral(" ");
                     EndContext();
@@ -460,7 +460,7 @@ WriteAttributeValue("", 4585, i, 4585, 2, false);
                 WriteLiteral("    <!-- #endregion -->\r\n\r\n    ");
                 EndContext();
                 BeginContext(4732, 126, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b438e674d72e4ca480628bf220d20820", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "940487e19b62477daf89b936df7a79bd", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();

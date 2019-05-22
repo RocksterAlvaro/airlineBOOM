@@ -69,7 +69,7 @@ using airlineBOOM;
             WriteLiteral("\r\n<!-- Flight setting of the simulation test -->\r\n<h1>Assign flight crew: Page 1</h1>\r\n\r\n");
             EndContext();
             BeginContext(242, 2767, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "772b8886330a40ce978596139412eca5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "463433424cb2460fbd31dbbeee9905a3", async() => {
                 BeginContext(331, 559, true);
                 WriteLiteral(@"
     <fieldset class=""form-group"">
@@ -244,7 +244,7 @@ WriteAttributeValue("", 2391, flightSetting.Id, 2391, 17, false);
                 WriteLiteral("            </table>\r\n        </div>\r\n    </fieldset>\r\n\r\n    ");
                 EndContext();
                 BeginContext(2892, 108, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "27cc761d7dda4008a0836b5048c54c24", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5cba909e568c450bb73148843e551377", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();

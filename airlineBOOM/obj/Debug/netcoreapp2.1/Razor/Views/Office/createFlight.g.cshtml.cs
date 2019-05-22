@@ -80,7 +80,7 @@ using airlineBOOM;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(140, 2273, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "112a833152e145de80e408841eff33c8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "97e8c7c9791543879d07b8cd94b11913", async() => {
                 BeginContext(210, 350, true);
                 WriteLiteral(@"
     <h1> Create Flight </h1>
@@ -98,7 +98,7 @@ using airlineBOOM;
                 ");
                 EndContext();
                 BeginContext(560, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c47c67e9f1c44a1abed59493d81c02b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11db7b81622048cd87cc01ca3779d9f0", async() => {
                     BeginContext(577, 9, true);
                     WriteLiteral("Choose...");
                     EndContext();
@@ -130,7 +130,7 @@ using airlineBOOM;
                 WriteLiteral("                    ");
                 EndContext();
                 BeginContext(693, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d327d50883e44e7eb6f6efa8f9a0bc26", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7d93e3817ca495b83d588a07ed30357", async() => {
                     BeginContext(720, 1, true);
                     WriteLiteral(" ");
                     EndContext();
@@ -185,7 +185,7 @@ using airlineBOOM;
                 ");
                 EndContext();
                 BeginContext(1019, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3a4b35c211c45419dd568aefac6b006", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b623fa992264778b490d8de8d3a94c8", async() => {
                     BeginContext(1036, 9, true);
                     WriteLiteral("Choose...");
                     EndContext();
@@ -217,7 +217,7 @@ using airlineBOOM;
                 WriteLiteral("                    ");
                 EndContext();
                 BeginContext(1152, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e176c6ea74c400eb807c495b969e6e3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a1297d3efac42968951be106771f904", async() => {
                     BeginContext(1179, 1, true);
                     WriteLiteral(" ");
                     EndContext();
@@ -264,7 +264,7 @@ using airlineBOOM;
                 WriteLiteral("            </select>\r\n        </div>\r\n\r\n        <!-- Hours of flight -->\r\n        <div class=\"col-auto\">\r\n            <label class=\"mr-sm-2\"> Hours of flight </label>\r\n\r\n            ");
                 EndContext();
                 BeginContext(1404, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b45647788274401286ae5254a7579bde", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a3cafdbf191748f88c2997a85c8cb4fa", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -292,7 +292,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n        </div>\r\n\r\n        <!-- Tickets sold -->\r\n        <div class=\"col-auto\">\r\n            <label class=\"mr-sm-2\"> Tickets sold </label>\r\n\r\n            ");
                 EndContext();
                 BeginContext(1648, 101, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "673c2ad9777f47929026233b31e7c52f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f7a4da06373c408db99d7b759f87f548", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -320,7 +320,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n        </div>\r\n\r\n        <!-- Flight date -->\r\n        <div class=\"col-auto\">\r\n            <label class=\"mr-sm-2\"> Flight date </label>\r\n\r\n            ");
                 EndContext();
                 BeginContext(1903, 57, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "43355afba2d14e10849b9b20d8d9a6c8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a12f47a3d42f48f398811f7af8a3c57e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -346,7 +346,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n        </div>\r\n    </div>\r\n\r\n    <!-- Description of the plane -->\r\n    <div class=\"form-group\">\r\n        <label class=\"col-2 col-form-label\">Airplane state:</label>\r\n        <div class=\"col-lg-6\">\r\n            ");
                 EndContext();
                 BeginContext(2174, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6476be43c8bf4aa391708965411edede", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "24012250930f41ad83ab5292d6732353", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
@@ -371,7 +371,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 WriteLiteral("\r\n        </div>\r\n    </div>\r\n\r\n    ");
                 EndContext();
                 BeginContext(2285, 119, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6486c6eba1eb4c2d98b7d0ffb7cccde8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "095e07fb7e324887bcbed691438b13c5", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();

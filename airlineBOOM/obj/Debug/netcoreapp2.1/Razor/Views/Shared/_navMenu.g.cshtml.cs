@@ -82,7 +82,7 @@ using airlineBOOM.Models;
             WriteLiteral("    <!-- Create flight -->\r\n    <li class=\"nav-item\">\r\n        ");
             EndContext();
             BeginContext(331, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fece0e5ce2db4fceb56cad54a5c76af8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ffe2187118e947b59264648ebe59134b", async() => {
                 BeginContext(401, 15, true);
                 WriteLiteral("| Create flight");
                 EndContext();
@@ -110,7 +110,7 @@ using airlineBOOM.Models;
             WriteLiteral("    <!-- Create flight setting -->\r\n    <li class=\"nav-item\">\r\n        ");
             EndContext();
             BeginContext(506, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3414c3f9e64348eeb6cdeee5126d2b82", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "306ffc01bbdc4359ac23b17652681f82", async() => {
                 BeginContext(583, 23, true);
                 WriteLiteral("| Create flight setting");
                 EndContext();
@@ -138,7 +138,7 @@ using airlineBOOM.Models;
             WriteLiteral("    <!-- Create pilot test -->\r\n    <li class=\"nav-item\">\r\n        ");
             EndContext();
             BeginContext(692, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2940923c13b94a789ef4c36d9397b7e8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41b822aab05a4d669d029bc5cdc54253", async() => {
                 BeginContext(765, 19, true);
                 WriteLiteral("| Create pilot test");
                 EndContext();
@@ -176,7 +176,7 @@ else if (User.IsInRole("Pilot"))
             WriteLiteral("    <!-- See flights -->\r\n    <li class=\"nav-item\">\r\n        ");
             EndContext();
             BeginContext(947, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6e7c021a6c64c06a9e8ac564b59b33d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0f7ab494df54951957850907dc002c8", async() => {
                 BeginContext(1014, 13, true);
                 WriteLiteral("| See flights");
                 EndContext();
@@ -214,7 +214,7 @@ else if (User.IsInRole("FlightOperator"))
             WriteLiteral("    <!-- Assign flight crew -->\r\n    <li class=\"nav-item\">\r\n        ");
             EndContext();
             BeginContext(1216, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6decf125c9c64343b4c2c1916b178372", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9eb27fe7fee04daa8ddba75f871b02cf", async() => {
                 BeginContext(1301, 20, true);
                 WriteLiteral("| Assign flight crew");
                 EndContext();

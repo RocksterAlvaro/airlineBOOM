@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace airlineBOOM.Models
@@ -405,40 +406,60 @@ namespace airlineBOOM.Models
             await UserManager.AddToRoleAsync(flightOperatorUser, "FlightOperator");
             #endregion
 
+            #region Seed PilotTests
             using (var _db = new AppDbContext(serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
-                Random rnd = new Random();
-
-                var meteorologies = await _db.Meteorologies.ToArrayAsync();
-                var visibilities = await _db.Visibilities.ToArrayAsync();
-                var setoffs = await _db.Setoffs.ToArrayAsync();
-
-                // Create & seed random test pilots test
-                var myPilots = await UserManager.GetUsersInRoleAsync("Pilot");
-                var flightSettings = await _db.FlightSettings.ToArrayAsync();
-                foreach (var pilot in pilots)
+                // Look for a database
+                int pilotTestsCount = await _db.PilotTests.CountAsync();
+                if (pilotTestsCount > 0)
                 {
-                    foreach (var flightSetting in flightSettings)
-                    {
-                        await _db.PilotTests.AddAsync(
-                            new PilotTest
-                            {
-                                PilotId = pilot.Id,
-                                SimulationSetting = flightSetting,
-                                PilotMeteorologyTest = meteorologies[rnd.Next(0, meteorologies.Length-1)],
-                                PilotVisibilityTest = visibilities[rnd.Next(0, visibilities.Length - 1)],
-                                PilotSetoffTest = setoffs[rnd.Next(0, setoffs.Length - 1)]
-                                
-                            }
-                        );
-                    }
-                }
+                    // Debug message
+                    string message = "\n PilotTests haven't been add. \n";
+                    Console.WriteLine(message);
 
-                // Save the data samples
-                _db.SaveChanges();
-                
+                    // DB has been seeded before
+                }
+                else
+                {
+                    // Debug message
+                    string message = "\n PilotTests have been added. \n";
+                    Console.WriteLine(message);
+
+                    Random rnd = new Random();
+
+                    // Get Meteorologies, Visibilities and Setoffs
+                    Meteorology[] meteorologies = await _db.Meteorologies.ToArrayAsync();
+                    Visibility[] visibilities = await _db.Visibilities.ToArrayAsync();
+                    Setoff[] setoffs = await _db.Setoffs.ToArrayAsync();
+
+                    // Get created pilots & flight settings
+                    var createdPilots = await UserManager.GetUsersInRoleAsync("Pilot");
+                    var flightSettings = await _db.FlightSettings.ToArrayAsync();
+
+                    // Create & seed random test pilots test
+                    foreach (var pilot in createdPilots)
+                    {
+                        foreach (var flightSetting in flightSettings)
+                        {
+                            await _db.PilotTests.AddAsync(
+                                new PilotTest
+                                (
+                                    rnd,
+                                    pilot.Id,
+                                    meteorologies,
+                                    visibilities,
+                                    setoffs,
+                                    flightSetting
+                                )
+                            );
+                        }
+                    }
+
+                    // Save the data samples
+                    _db.SaveChanges();
+                }
             }
-            
+            #endregion
         }
     }
 }

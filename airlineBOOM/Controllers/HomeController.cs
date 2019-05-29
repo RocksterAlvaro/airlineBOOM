@@ -1,6 +1,7 @@
 ﻿using airlineBOOM.Data;
 using airlineBOOM.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -50,6 +51,7 @@ namespace airlineBOOM.Controllers
 
             // Login user
             var result = await _signInManager.PasswordSignInAsync(appUser.UserName, appUser.Password, false, false);
+            Console.WriteLine("Cookie: " + _signInManager.IsSignedIn(User));
 
             if (result.Succeeded) { return RedirectToAction("index", "home"); }
             else { return Content("User login failed", "text/html"); }

@@ -50,7 +50,7 @@ namespace airlineBOOM
             services.ConfigureApplicationCookie(options =>
             {
                 // Changes the login path
-                options.LoginPath = "/login";
+                options.LoginPath = "/home/login";
 
                 // Change cookie time out
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(120); // Cokkies expire in 120 minutes

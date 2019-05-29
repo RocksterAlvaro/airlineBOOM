@@ -14,13 +14,16 @@ namespace airlineBOOM.Controllers
     {
         private readonly AppDbContext _db;
         private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
         public FlightOperatorController(
             AppDbContext db,
-            UserManager<AppUser> userManager)
+            UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager)
         {
             _db = db;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         // Flight Operator - Assign Flight Setting
@@ -28,6 +31,8 @@ namespace airlineBOOM.Controllers
         [Route("/FlightOperator/AssignFlightSetting", Name = "flightOperatorAssignFlightSetting")]
         public ActionResult AssignFlightSetting()
         {
+            Console.WriteLine("Cookie: " + _signInManager.IsSignedIn(User));
+
             // Search and return all flight settings
             ViewBag.flightSettings = _db.FlightSettings
                 .Include(flightSetting => flightSetting.FlightSettingMeteorology)
